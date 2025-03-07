@@ -16,11 +16,8 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Find Java Files
-        run: find . -name "*.java"
-
       - name: Compile Java Code
-        run: javac -d bin *.java
+        run: javac -d *.java
 
       - name: Run JUnit Tests
-        run: java -cp junit-5.8.1.jar org.junit.runner.JUnitCore CalculatorTest
+        run: java -cp junit-5.8.1.jar org.junit.runner.JUnitCore YourTestClass
