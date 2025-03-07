@@ -16,6 +16,8 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Build and Test
-        run: |
-          mvn -B package --file pom.xml
+      - name: Compile Java Code
+        run: javac -d bin src/*.java
+
+      - name: Run JUnit Tests
+        run: java -cp .:bin:libs/junit-5.8.1.jar org.junit.runner.JUnitCore CalculatorTest
